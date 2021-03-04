@@ -1,8 +1,6 @@
-﻿using System;
-using System.Reflection;
-using log4net;
+﻿using log4net;
 
-namespace File_Speed_Test_Core.obj
+namespace File_Speed_Test_Core
 {
     public class Main
     {
