@@ -1,4 +1,6 @@
 ﻿using log4net;
+using System;
+using System.Net;
 
 namespace File_Speed_Test_Core
 {
@@ -19,8 +21,25 @@ namespace File_Speed_Test_Core
             dir = _dir;
             
             log.Info(@">> Main Initializing");
+            
+            //TODO: Main Part.
 
             return "Exception";
+        }
+
+        public double DownloadTask()
+        {
+            Uri uri = new Uri(url);
+            WebClient web = new WebClient();
+            double startt = Environment.TickCount;
+            web.DownloadFile(uri, dir);
+
+            double endt = Environment.TickCount;
+            double sec = Math.Floor(endt - startt) / 1000;
+            double secs = Math.Round(sec, 0);
+            double kbs = Math.Round(1024 / secs);
+
+            return kbs;
         }
     }
 }
