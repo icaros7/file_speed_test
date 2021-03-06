@@ -29,7 +29,9 @@ namespace File_Speed_Test_Core
                     init.Exit(status);
                     break;
                 case "Normal":
-                    
+                    Main main = new Main();
+                    status = main.Init(args[0], args[1]).ToString();
+                    init.Exit(status);
                     break;
                 default:
                     Console.WriteLine(str.unknown_error);
